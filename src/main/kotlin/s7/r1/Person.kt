@@ -1,17 +1,18 @@
 package s7.r1
 
-class Person(private val name: String,
-             private val lastName: String? = null) {
+class Person(
+    val name:String? = null,
+    private val lastName:String? = null){
 
-
-    fun getLastName(): String {
-        val lName = lastName ?: throw IllegalArgumentException("No se encontró el apellido")
-        return lastName
+    fun getFullName(): String {
+        val lName =  lastName ?: throw IllegalArgumentException("Necesitas apellidos")
+        return "$name $lName"
     }
-
-    fun getName(): String {
-        val fName = lastName ?: throw IllegalArgumentException("Necesitas escribir los apellidos")
-        return "$name $fName"
+    fun fail(message: String): Nothing {
+        throw IllegalArgumentException(message)
     }
-
+    fun getLastName() : String {
+        val lName = lastName ?: return "No se encontró apellido"
+        return lName
+    }
 }

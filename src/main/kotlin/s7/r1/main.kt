@@ -17,10 +17,10 @@ fun main () {
     println("Parte 3")
 
     val person1 = Person("Gonzalo", "Olvera")
-    println(person1.getName())
+    println(person1.getFullName())
     println(person1.getLastName())
     val person2 = Person("Paco")
-    println(person2.getName())
+    println(person2.getLastName())
     println(person2.getLastName())
 
 
